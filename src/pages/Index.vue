@@ -15,7 +15,7 @@ import ImageSlider from '~/components/ImageSlider.vue';
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'TeamCreate'
   },
   components: {
     Hero,
