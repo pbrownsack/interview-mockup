@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Sen', Arial, sans-serif;
+  background-color: #F3F3F3;
+}
+
+.container {
+  width: 1366px;
+  margin: 0 auto;
+}
+
+.no-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1366px) {
+  .container {
+    width: 1080px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+}
