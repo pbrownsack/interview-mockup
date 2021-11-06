@@ -7,6 +7,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   line-height: 1.5;
   font-family: 'Sen', Arial, sans-serif;
   background-color: #F3F3F3;
@@ -36,5 +38,5 @@ body {
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-
+  
 }

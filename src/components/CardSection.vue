@@ -58,7 +58,41 @@ export default {
 
 .cards {
     display: flex;
+    justify-content: center;
     margin-top: 2em;
     column-gap: 1em;
+}
+
+@media screen and (max-width: 960px) {
+    .cards {
+        margin: 2em -3em 0 -3em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-section {
+        & h3 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        & span {
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    .card-section .container {
+        padding: 1em 3em;
+    }
+
+    .card-section::before { display: none; }
+
+    .cards {
+        margin: 1em 0 0 0;
+        flex-direction: column;
+        column-gap: unset;
+        row-gap: 0.8em;
+    }
 }
 </style>

@@ -84,4 +84,27 @@ export default {
         padding: 0 2em;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        header {
+            font-size: 1em;
+        }
+
+        .container {
+            padding: 0 1em;
+            justify-content: space-between;
+        }
+
+        nav {
+            margin-left: unset;
+
+            a {
+                padding: 0 0.5em;
+            }
+        }
+    }
+
+    .nav-cta { display: none }
+}
 </style>

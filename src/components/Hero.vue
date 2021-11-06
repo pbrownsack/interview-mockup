@@ -68,4 +68,38 @@ export default {
         width: unset;
     }
 }
+
+@media screen and (max-width: 960px) {
+    .hero .container {
+        padding: 5em 5em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+
+    .hero .container {
+        padding: 1.5em 2.5em;
+        flex-direction: column-reverse;
+    }
+
+    .hero-title {
+        width: unset;
+        font-size: 36px;
+    }
+
+    .hero-sub {
+        font-size: 14px;
+    }
+
+    .hero-right img {
+        width: 160px;
+    }
+
+    .hero-button {
+        margin-top: 1.5em;
+    }
+}
 </style>
