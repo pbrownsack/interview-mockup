@@ -4,6 +4,7 @@
     <Hero />
     <CardSection />
     <ImageSlider />
+    <ImageModal v-if="this.$store.modalOpen" v-bind:image="this.$store.imageSrc" />
 
   </Layout>
 </template>
@@ -12,6 +13,7 @@
 import Hero from '~/components/Hero.vue';
 import CardSection from '~/components/CardSection.vue';
 import ImageSlider from '~/components/ImageSlider.vue';
+import ImageModal from '~/components/ImageModal.vue'
 
 export default {
   metaInfo: {
@@ -20,7 +22,8 @@ export default {
   components: {
     Hero,
     CardSection,
-    ImageSlider
+    ImageSlider,
+    ImageModal
   }
 }
 </script>

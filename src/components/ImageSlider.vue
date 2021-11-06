@@ -3,7 +3,7 @@
         <h3>The best work is <span>team</span>work</h3>
         <transition-group name="fade" tag="div">
             <div v-for="i in [currentIndex]" :key="i">
-                <img :src="currentImg" />
+                <img :src="currentImg" @click="openModal(currentImg)" />
             </div>
         </transition-group>
         <a class="prev" @click="prevImage" href="#">&lt;</a>
@@ -44,6 +44,11 @@ export default {
             this.currentIndex -= 1;
             clearInterval(this.timer);
             this.doCount();
+        },
+
+        openModal: function(src) {
+            this.$store.modalOpen = true;
+            this.$store.imageSrc = src;
         }
     },
     computed: {
@@ -60,21 +65,58 @@ export default {
     height: 550px;
 
     h3 {
+        text-align: center;
         color: #fff;
-        font-size: 38px;
+        font-size: 36px;
         font-weight: 500;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 0.2em 0.6em;
-        z-index: 999;
+        z-index: 998;
         background-color: rgba(#000F1D, 0.6);
+        pointer-events: none;
 
         span {
             font-weight: bold;
             color: #0078EF;
         }
+    }
+
+    img {
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        padding: 8px 16px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.7 ease-out;
+        text-decoration: none;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+        right: 2em;
+    }
+
+    .prev {
+        left: 2em;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.9);
     }
 }
 
@@ -95,37 +137,33 @@ export default {
     opacity: 0;
 }
 
-img {
-    height: 550px;
-    width: 100%;
-    object-fit: cover;
+@media screen and (max-width: 1024px) {
+    .image-slider h3 {
+        font-size: 32px;
+    }
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    padding: 8px 16px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.7 ease-out;
-    text-decoration: none;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+@media screen and (max-width: 768px) {
+    .image-slider {
+        text-align: center;
+        height: 236px;
 
-.next {
-    right: 2em;
-}
+        img {
+            height: 236px;
+        }
 
-.prev {
-    left: 2em;
-}
+        .next {
+            right: 0.5em;
+        }
+        
+        .prev {
+            left: 0.5em;
+        }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+        h3 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
 }
 </style>
